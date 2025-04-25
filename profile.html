@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Pill Guard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button class="back-btn" onclick="window.location.href='index.html'">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <h1>Profile</h1>
+        </header>
+
+        <main class="profile-main">
+            <div class="profile-card">
+                <!-- View Mode -->
+                <div id="viewProfile" class="profile-view">
+                    <div class="profile-header">
+                        <div class="profile-image">
+                            <img id="profileImage" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" alt="Profile Picture">
+                        </div>
+                        <div id="profileName" class="profile-name">Your Name</div>
+                        <div id="profileTagline" class="profile-tagline">Your Health Journey</div>
+                        <button id="editButton" class="edit-btn">
+                            <i class="fas fa-edit"></i> Edit Profile
+                        </button>
+                    </div>
+
+                    <div id="profileInfo" class="profile-info">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Edit Mode -->
+                <div id="editProfile" class="profile-edit" style="display: none;">
+                    <form id="profileForm" class="profile-form">
+                        <div class="form-group">
+                            <label for="inputName">Full Name</label>
+                            <input type="text" id="inputName" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputTagline">Tagline</label>
+                            <input type="text" id="inputTagline" placeholder="Your health journey description">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputAge">Age</label>
+                            <input type="number" id="inputAge" required min="1" max="150">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputGender">Gender</label>
+                            <select id="inputGender" required>
+                                <option value="">Select Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputPhone">Phone Number</label>
+                            <input type="tel" id="inputPhone" pattern="[0-9]{10}" placeholder="10-digit number">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputEmail">Email</label>
+                            <input type="email" id="inputEmail" placeholder="your@email.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputAddress">Address</label>
+                            <textarea id="inputAddress" rows="2"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputEmergencyContact">Emergency Contact</label>
+                            <input type="tel" id="inputEmergencyContact" pattern="[0-9]{10}" placeholder="Emergency contact number">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputBloodGroup">Blood Group</label>
+                            <select id="inputBloodGroup">
+                                <option value="">Select Blood Group</option>
+                                <option value="A+">A+</option>
+                                <option value="A-">A-</option>
+                                <option value="B+">B+</option>
+                                <option value="B-">B-</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB-</option>
+                                <option value="O+">O+</option>
+                                <option value="O-">O-</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="inputAllergies">Allergies</label>
+                            <textarea id="inputAllergies" rows="2" placeholder="List any allergies"></textarea>
+                        </div>
+
+                        <div class="form-buttons">
+                            <button type="submit" class="save-btn">Save Profile</button>
+                            <button type="button" class="cancel-btn" id="cancelEdit">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <nav class="bottom-nav">
+            <button class="nav-btn" onclick="window.location.href='index.html'">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </button>
+            <button class="nav-btn" onclick="window.location.href='medicine.html'">
+                <i class="fas fa-pills"></i>
+                <span>Medicine</span>
+            </button>
+            <button class="nav-btn">
+                <i class="fas fa-qrcode"></i>
+                <span>Scanner</span>
+            </button>
+            <button class="nav-btn" onclick="window.location.href='reminder.html'">
+                <i class="fas fa-bell"></i>
+                <span>Reminder</span>
+            </button>
+            <button class="nav-btn active">
+                <i class="fas fa-user"></i>
+                <span>Profile</span>
+            </button>
+        </nav>
+    </div>
+    <script src="profile.js"></script>
+</body>
+</html>

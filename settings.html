@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Pill Guard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button class="back-btn" onclick="window.location.href='index.html'">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <h1>Settings</h1>
+        </header>
+
+        <main class="settings-main">
+            <div class="settings-container">
+                <!-- Medicine Settings Form -->
+                <section class="settings-section">
+                    <h2><i class="fas fa-pills"></i> Medicine Details</h2>
+                    <form id="medicineForm">
+                        <div class="form-group">
+                            <label for="medicineName">Medicine Name:</label>
+                            <input type="text" id="medicineName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Quantity:</label>
+                            <input type="number" id="quantity" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lowStockAlert">Low Stock Alert Level:</label>
+                            <input type="number" id="lowStockAlert" min="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="expiryDate">Expiry Date:</label>
+                            <input type="date" id="expiryDate" required>
+                        </div>
+                        <button type="submit" class="save-btn">Save Medicine</button>
+                    </form>
+                </section>
+
+                <!-- Reminder Settings Form -->
+                <section class="settings-section">
+                    <h2><i class="fas fa-clock"></i> Reminder Settings</h2>
+                    <form id="reminderForm">
+                        <div class="form-group">
+                            <label for="reminderTime">Reminder Time:</label>
+                            <input type="time" id="reminderTime" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="selectMedicine">Select Medicine:</label>
+                            <select id="selectMedicine" required>
+                                <!-- Options will be populated by JavaScript -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="dosage">Dosage:</label>
+                            <input type="text" id="dosage" placeholder="e.g., 1 tablet" required>
+                        </div>
+                        <button type="submit" class="save-btn">Save Reminder</button>
+                    </form>
+                </section>
+
+                <!-- Reset Section -->
+                <section class="settings-section danger-zone">
+                    <h2><i class="fas fa-exclamation-triangle"></i> Reset Data</h2>
+                    <p>Warning: This will delete all your medicine and reminder settings.</p>
+                    <button id="resetBtn" class="reset-btn">Reset All Data</button>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script src="settings.js"></script>
+</body>
+</html>
